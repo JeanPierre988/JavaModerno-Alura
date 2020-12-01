@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Curso {
@@ -27,10 +28,11 @@ class Testa {
         cursos.add(new Curso("Java 8", 113));
         cursos.add(new Curso("C", 55));
 
+//        cursos.sort(Comparator.comparing(Curso::getAlunos));
+//        cursos.forEach(al -> System.out.println(al.getAlunos()));
+
         cursos.stream()
-                .filter(curso -> curso.getAlunos() <=100)
                 .map(Curso::getAlunos)
-                .sorted()
                 .forEach(System.out::println);
     }
 }
